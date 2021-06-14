@@ -3,6 +3,8 @@
 // Secret Number
 const secretNumber = Math.trunc(Math.random() * 20 + 1);
 document.querySelector(".number").textContent = secretNumber;
+// Starting Score - a let beacuse we will be decreasing this value! a const is immutable
+let score = 20;
 
 /* 
 Event Listener - Check Button Click
@@ -28,9 +30,11 @@ document.querySelector(".check").addEventListener("click", function () {
   // guess is greater than the secret number
   else if (guess > secretNumber) {
     document.querySelector(".message").textContent = "📈 Too high!";
+    score--;
   }
   // guess is less than the secret number
   else if (guess < secretNumber) {
     document.querySelector(".message").textContent = "📉 Too low!";
+    score--;
   }
 });
