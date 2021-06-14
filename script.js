@@ -29,12 +29,23 @@ document.querySelector(".check").addEventListener("click", function () {
   }
   // guess is greater than the secret number
   else if (guess > secretNumber) {
-    document.querySelector(".message").textContent = "📈 Too high!";
-    score--;
+    // let's add our losing scenario here
+    if (score > 0) {
+      document.querySelector(".message").textContent = "📈 Too high!";
+      // decrease the score
+      score--;
+      // display the updated score
+      document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".message").textContent = "💥 You lose the game!";
+    }
   }
   // guess is less than the secret number
   else if (guess < secretNumber) {
     document.querySelector(".message").textContent = "📉 Too low!";
+    // decrease the score
     score--;
+    // display the updated score
+    document.querySelector(".score").textContent = score;
   }
 });
