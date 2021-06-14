@@ -25,7 +25,12 @@ document.querySelector(".check").addEventListener("click", function () {
   }
   // when the guess is correct
   else if (guess === secretNumber) {
-    document.querySelector(".message").textContent = "🎉 Correct answer!";
+    document.querySelector(".message").textContent = "🎉 Correct number!";
+
+    // selecting the body element so we can set the background color to green
+    document.querySelector("body").style.backgroundColor = "#60b347";
+    // make secret nuumber wider
+    document.querySelector(".number").style.width = "30rem";
   }
   // guess is greater than the secret number
   else if (guess > secretNumber) {
