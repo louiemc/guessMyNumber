@@ -1,5 +1,9 @@
 "use strict";
 
+// Secret Number
+const secretNumber = Math.trunc(Math.random() * 20 + 1);
+document.querySelector(".number").textContent = secretNumber;
+
 /* 
 Event Listener - Check Button Click
 Select the check button and add an even listener on click
@@ -16,5 +20,9 @@ document.querySelector(".check").addEventListener("click", function () {
   if (!guess) {
     // no guess means a false value. if the guess is false then the nagation operator will be inverted from false to true
     document.querySelector(".message").textContent = "⛔️ No number!";
+  }
+  // when the guess is correct
+  else if (guess === secretNumber) {
+    document.querySelector(".message").textContent = "🎉 Correct answer!";
   }
 });
