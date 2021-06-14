@@ -25,4 +25,12 @@ document.querySelector(".check").addEventListener("click", function () {
   else if (guess === secretNumber) {
     document.querySelector(".message").textContent = "🎉 Correct answer!";
   }
+  // guess is greater than the secret number
+  else if (guess > secretNumber) {
+    document.querySelector(".message").textContent = "📈 Too high!";
+  }
+  // guess is less than the secret number
+  else if (guess < secretNumber) {
+    document.querySelector(".message").textContent = "📉 Too low!";
+  }
 });
