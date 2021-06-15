@@ -2,7 +2,6 @@
 
 // Secret Number
 const secretNumber = Math.trunc(Math.random() * 20 + 1);
-document.querySelector(".number").textContent = secretNumber;
 // Starting Score - a let beacuse we will be decreasing this value! a const is immutable
 let score = 20;
 
@@ -29,6 +28,8 @@ document.querySelector(".check").addEventListener("click", function () {
 
     // selecting the body element so we can set the background color to green
     document.querySelector("body").style.backgroundColor = "#60b347";
+    // make the secret number visible
+    document.querySelector(".number").textContent = secretNumber;
     // make secret nuumber wider
     document.querySelector(".number").style.width = "30rem";
   }
@@ -68,4 +69,8 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".score").textContent = 0;
     }
   }
+});
+
+document.querySelector(".again").addEventListener("click", function () {
+  document.querySelector(".score").textContent = 20;
 });
