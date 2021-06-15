@@ -1,7 +1,7 @@
 "use strict";
 
 // Secret Number
-const secretNumber = Math.trunc(Math.random() * 20 + 1);
+let secretNumber = Math.trunc(Math.random() * 20 + 1);
 // Starting Score - a let beacuse we will be decreasing this value! a const is immutable
 let score = 20;
 
@@ -71,11 +71,24 @@ document.querySelector(".check").addEventListener("click", function () {
   }
 });
 
+// Event listener for Again! button
 document.querySelector(".again").addEventListener("click", function () {
-  document.querySelector(".score").textContent = 20;
-  // document.querySelector("body").style.backgroundColor = "#222";
-  document.querySelector(".highscore").textContent = score;
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20 + 1);
+
+  // reset score to 20
+  document.querySelector(".score").textContent = score;
+
+  // reset the message to say 'start guessing'
   document.querySelector(".message").textContent = "Start guessing...";
+
+  // make the secret number secret again
   document.querySelector(".number").textContent = "?";
+
+  // reset the input field to be blank
   document.querySelector(".guess").value = "";
+
+  // reset the background color to the og color
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").style.width = "15rem";
 });
