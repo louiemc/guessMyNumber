@@ -11,9 +11,13 @@ let highscore = 0;
 function displayMessage(message) {
   document.querySelector(".message").textContent = message;
 }
-// refactoring with a function for the score
+// refactoring with a function for scores
 function displayScore(score) {
   document.querySelector(".score").textContent = score;
+}
+// refactoring with a function for secretNumber
+function displaySecretNumber(number) {
+  document.querySelector(".number").textContent = number;
 }
 
 /* 
@@ -42,8 +46,11 @@ document.querySelector(".check").addEventListener("click", function () {
 
     // selecting the body element so we can set the background color to green
     document.querySelector("body").style.backgroundColor = "#60b347";
+
     // make the secret number visible
-    document.querySelector(".number").textContent = secretNumber;
+    // document.querySelector(".number").textContent = secretNumber;
+    displaySecretNumber(secretNumber);
+
     // make secret nuumber wider
     document.querySelector(".number").style.width = "30rem";
 
@@ -133,7 +140,8 @@ document.querySelector(".again").addEventListener("click", function () {
   displayMessage("Start guessing...");
 
   // make the secret number secret again
-  document.querySelector(".number").textContent = "?";
+  // document.querySelector(".number").textContent = "?";
+  displaySecretNumber("?");
 
   // reset the input field to be blank
   document.querySelector(".guess").value = "";
