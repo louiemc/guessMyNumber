@@ -4,6 +4,8 @@
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
 // Starting Score - a let beacuse we will be decreasing this value! a const is immutable
 let score = 20;
+// Starting Highscore at 0 - this way the first score is always going to be the highscore because it's going to be greater than 0
+let highscore = 0;
 
 /* 
 Event Listener - Check Button Click
