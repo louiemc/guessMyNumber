@@ -11,6 +11,10 @@ let highscore = 0;
 function displayMessage(message) {
   document.querySelector(".message").textContent = message;
 }
+// refactoring with a function for the score
+function displayScore(score) {
+  document.querySelector(".score").textContent = score;
+}
 
 /* 
 Event Listener - Check Button Click
@@ -102,13 +106,15 @@ document.querySelector(".check").addEventListener("click", function () {
       // decrease the score
       score--;
       // display the updated score
-      document.querySelector(".score").textContent = score;
+      // document.querySelector(".score").textContent = score;
+      displayScore(score);
     } else {
       // if the score is 0 then the player will lose
       // document.querySelector(".message").textContent = "💥 You lose the game!";
       displayMessage("💥 You lose the game!");
       // set the score to 0 when you lose
-      document.querySelector(".score").textContent = 0;
+      // document.querySelector(".score").textContent = 0;
+      displayScore(0);
     }
   }
 });
@@ -119,7 +125,8 @@ document.querySelector(".again").addEventListener("click", function () {
   secretNumber = Math.trunc(Math.random() * 20 + 1);
 
   // reset score to 20
-  document.querySelector(".score").textContent = score;
+  // document.querySelector(".score").textContent = score;
+  displayScore(score);
 
   // reset the message to say 'start guessing'
   // document.querySelector(".message").textContent = "Start guessing...";
