@@ -34,6 +34,14 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".number").textContent = secretNumber;
     // make secret nuumber wider
     document.querySelector(".number").style.width = "30rem";
+
+    // If the current score is greater than the highscore
+    if (score > highscore) {
+      // the new highscore is the current score
+      highscore = score;
+      // display the score to be the new highscore
+      document.querySelector(".highscore").textContent = highscore;
+    }
   }
   // guess is greater than the secret number
   else if (guess > secretNumber) {
