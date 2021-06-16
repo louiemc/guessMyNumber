@@ -33,7 +33,8 @@ document.querySelector(".check").addEventListener("click", function () {
   }
   // when the guess is correct
   else if (guess === secretNumber) {
-    document.querySelector(".message").textContent = "🎉 Correct number!";
+    // document.querySelector(".message").textContent = "🎉 Correct number!";
+    displayMessage("🎉 Correct number!");
 
     // selecting the body element so we can set the background color to green
     document.querySelector("body").style.backgroundColor = "#60b347";
@@ -95,15 +96,17 @@ document.querySelector(".check").addEventListener("click", function () {
     // let's add our losing scenario here
     if (score > 1) {
       // use a ternary operator to figure out if the guess is greater than or less than the secretNumber
-      document.querySelector(".message").textContent =
-        guess > secretNumber ? "📈 Too high!" : "📈 Too low!";
+      // document.querySelector(".message").textContent =
+      //   guess > secretNumber ? "📈 Too high!" : "📈 Too low!";
+      displayMessage(guess > secretNumber ? "📈 Too high!" : "📈 Too low!");
       // decrease the score
       score--;
       // display the updated score
       document.querySelector(".score").textContent = score;
     } else {
       // if the score is 0 then the player will lose
-      document.querySelector(".message").textContent = "💥 You lose the game!";
+      // document.querySelector(".message").textContent = "💥 You lose the game!";
+      displayMessage("💥 You lose the game!");
       // set the score to 0 when you lose
       document.querySelector(".score").textContent = 0;
     }
@@ -119,7 +122,8 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".score").textContent = score;
 
   // reset the message to say 'start guessing'
-  document.querySelector(".message").textContent = "Start guessing...";
+  // document.querySelector(".message").textContent = "Start guessing...";
+  displayMessage("Start guessing...");
 
   // make the secret number secret again
   document.querySelector(".number").textContent = "?";
